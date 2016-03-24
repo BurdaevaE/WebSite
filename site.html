@@ -14,6 +14,7 @@
 			color:#c49d4d;
 			text-align:center;
 			font-size:50px;
+			font-family:sans-serif;
 			}
 			
 		#top {
@@ -57,12 +58,12 @@
 			}
 		
 		 .content {
-    	 	float:left;
-    		width:25%;
+    	 	float:right;
+    		width:30%;
 		    background:#c49d4d;
 			height:100px;
+			text-align:center;
 		 }
-		 
 		 		
 		@media(max-width: 768px) {
 			#right-panel
@@ -74,24 +75,41 @@
 			 	width:50%;
 			}
 		 }
+		 
+		 #img_911
+		 {
+		  height:40%;
+		  width:40%;
+		 }
 		
     </style>
 </head>
 <body>
 	<header id="header">PORSCHE</header>
 	<div id="top"></div>
-    <div id="right-panel"></div>
+    <div id="right-panel">
+		 	<ul>
+				<li>Main Page</li>
+				<li>Galery</li>
+				<li><a href="http://www.porsche.com/russia/">Official site</a></li>
+			</ul>
+	</div>
 	<button id="up_button">^</button>
 	<script>
 		document.getElementById("up_button").addEventListener("click", function(){window.scrollTo(0, 0);});
 	</script>
 	<div id="content">
-		 <div class="content">1</div>
-		 <div class="content">2</div>
-		 <div class="content">3</div>
-		 <div class="content">4</div>
-		 <div class="content">5</div>
-		 <div class="content">6</div>
+		 <div class="content" id="p_911">
+		 	  <div class="name">Porsche 911</div>
+			  <div class="image">
+			  	   <img id="img_911" src="http://www.topgear.com/sites/default/files/styles/fit_1960x1102/public/cars-car/carousel/2015/02/buyers_guide_-_porsche_911_cabrio_2014_-_front_quarter.jpg?itok=ffb_tZHr"/>
+			  </div>
+  		 </div>
+		 <div class="content" id="p_panamera">Porsche Panamera</div>
+		 <div class="content" id="p_cayman">Porsche Cayman</div>
+		 <div class="content" id="p_cayenne">Porsche Cayenne</div>
+		 <div class="content" id="p_macan">Porsche Macan</div>
+		 <div class="content" id="p_boxter">Porsche Boxter</div>
 	</div>
 </body>
 </html>
