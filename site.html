@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vzhiiiiih.....</title>
+    <meta charset="windows-1251">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css"
+          rel="stylesheet"
+          type="text/css">
+    <style>
+        
+		#header {
+			height: 50px;
+			background-color: #2a292a;
+			color:#c49d4d;
+			text-align:center;
+			}
+			
+		#top {
+			height: 50px;
+			background-color: #626782;
+			}
+		
+		#right-panel {
+			float: right;
+			width: 300px;
+			height: 400px;
+			background-color: #c9b4ce;
+			}
+			
+		#content {
+			height: 50px;
+			background-color: #ecd9c0;
+			height:1200px;
+			}
+		#up_button {
+		    background-color: transparent;
+    		height: 100%;
+    		left: 0;
+    		position: fixed;
+    		top: 0px;
+    		width: 20px;
+    		text-align: center;
+    		padding-top: 10px;
+			z-index: 99;
+			opacity: 0.5;
+    	}
+		#up_button:hover {
+		    background-color: #F6E1FB;
+   			cursor: pointer;
+    		height: 100%;
+    		left: 0;
+    		position: fixed;
+    		top: 0;
+    		width: 20px;
+    		text-align: center;
+    		padding-top: 10px;
+    		color: #777;
+		 }
+		
+    </style>
+</head>
+<body>
+	<header id="header">Porsche</header>
+	<div id="top"></div>
+    <div id="right-panel"></div>
+	<div id="content"></div>
+	<button id="up_button">^</button>
+	<script>
+		document.getElementById("up_button").addEventListener("click", function(){window.scrollTo(0, 0);});
+	</script>
+</body>
+</html>
