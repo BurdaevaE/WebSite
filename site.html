@@ -9,10 +9,11 @@
     <style>
         
 		#header {
-			height: 50px;
+			height: 70px;
 			background-color: #2a292a;
 			color:#c49d4d;
 			text-align:center;
+			font-size:50px;
 			}
 			
 		#top {
@@ -27,11 +28,6 @@
 			background-color: #c9b4ce;
 			}
 			
-		#content {
-			height: 50px;
-			background-color: #ecd9c0;
-			height:1200px;
-			}
 		#up_button {
 		    background-color: transparent;
     		height: 100%;
@@ -56,17 +52,46 @@
     		padding-top: 10px;
     		color: #777;
 		 }
+		 #content {
+			background-color: #ecd9c0;
+			}
+		
+		 .content {
+    	 	float:left;
+    		width:25%;
+		    background:#c49d4d;
+			height:100px;
+		 }
+		 
+		 		
+		@media(max-width: 768px) {
+			#right-panel
+			{
+			 	display:none;
+			}
+			.content
+			{
+			 	width:50%;
+			}
+		 }
 		
     </style>
 </head>
 <body>
-	<header id="header">Porsche</header>
+	<header id="header">PORSCHE</header>
 	<div id="top"></div>
     <div id="right-panel"></div>
-	<div id="content"></div>
 	<button id="up_button">^</button>
 	<script>
 		document.getElementById("up_button").addEventListener("click", function(){window.scrollTo(0, 0);});
 	</script>
+	<div id="content">
+		 <div class="content">1</div>
+		 <div class="content">2</div>
+		 <div class="content">3</div>
+		 <div class="content">4</div>
+		 <div class="content">5</div>
+		 <div class="content">6</div>
+	</div>
 </body>
 </html>
