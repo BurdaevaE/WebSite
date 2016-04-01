@@ -1,68 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Vzhiiiiih.....</title>
-    <meta charset="windows-1251">
+    <title>Lab1</title>
+    <meta charset="utf-8">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css"
           rel="stylesheet"
           type="text/css">
     <style>
         
 		#header {
-			height: 70px;
-			background-color: #2a292a;
-			color:#c49d4d;
+			height:auto;
+			float:center;
+			position:relative;
+			background-color: #171617;
 			text-align:center;
-			font-size:50px;
-			font-family:sans-serif;
+			color:#fac761;
 			}
 			
 		#top {
-			height: 50px;
-			background-color: #626782;
+			height: 70px;
+			background-color:  #626782;
+			color:#fdcc38;
+			text-align:center;
+			font-size:35px;
+			font-family:sans-serif;
+			position:relative;
+			vertical-align:middle;
+		}
+			
+		#content {
+			margin-right:170px;
 			}
+ 
+		.content {
+		 	position:relative;
+    			width:15%;
+		    	background:#c49d4d;
+			height:250px;
+			text-align:center;
+			float:right;
+			margin:10px;
+			box-shadow: 5px 3px 8px -5px #000000;
+		 	}
 		
 		#right-panel {
 			float: right;
-			width: 300px;
-			height: 400px;
+			width: 150px;
+			height: 250px;
 			background-color: #c9b4ce;
+			margin-top:10px;
 			}
 			
 		#up_button {
-		    background-color: transparent;
-    		height: 100%;
-    		left: 0;
-    		position: fixed;
-    		top: 0px;
-    		width: 20px;
-    		text-align: center;
-    		padding-top: 10px;
+		    	background-color: transparent;
+    			height: 100%;
+    			left: 0;
+    			position: fixed;
+    			top: 0px;
+    			width: 30px;
+    			text-align: center;
+    			padding-top: 10px;
 			z-index: 99;
 			opacity: 0.5;
-    	}
+    			}
 		#up_button:hover {
-		    background-color: #F6E1FB;
-   			cursor: pointer;
-    		height: 100%;
-    		left: 0;
-    		position: fixed;
-    		top: 0;
-    		width: 20px;
-    		text-align: center;
-    		padding-top: 10px;
-    		color: #777;
-		 }
-		 #content {
-			background-color: #ecd9c0;
-			}
-		
-		 .content {
-    	 	float:right;
-    		width:30%;
-		    background:#c49d4d;
-			height:100px;
-			text-align:center;
+			background-color: #F6E1FB;
+   		    	cursor: pointer;
+    			height: 100%;
+    			left: 0;
+    			position: fixed;
+    			top: 0;
+    			width: 40px;
+    			text-align: center;
+    			padding-top: 10px;
+    			color: #777;
 		 }
 		 		
 		@media(max-width: 768px) {
@@ -72,44 +83,202 @@
 			}
 			.content
 			{
-			 	width:50%;
+			 	width:30%;
+				margin-left: 0px !important;
 			}
 		 }
 		 
-		 #img_911
+		#body
 		 {
-		  height:40%;
-		  width:40%;
+    		 max-width:1600px;
+    		 margin: 0 auto 0 auto;
+			 background:#f8e8fc;
 		 }
-		
+		 #logo_image
+		 {
+		  	 height:40%;
+    		 width:40%;
+		 }
+		 
     </style>
 </head>
-<body>
-	<header id="header">PORSCHE</header>
-	<div id="top"></div>
-    <div id="right-panel">
+<body id="body">
+	<header id="header">
+		<div class="logo_image">
+			 <img id="logo_image" src="https://img3.goodfon.ru/wallpaper/big/5/4d/porshe-porshe-logotip-emblema.jpg"/>
+		</div>
+	</header>
+	<div id="top">The best cars for you! Rrrum-rum......</div>
+	<div id="right-panel">
 		 	<ul>
-				<li>Main Page</li>
+				<li>Models</li>
 				<li>Galery</li>
-				<li><a href="http://www.porsche.com/russia/">Official site</a></li>
+				<li><a href="http://www.porsche-nnovgorod.ru">Officcial Site</a></li>
 			</ul>
 	</div>
+	<div id="content">
+		 <div class="content">
+		 	  <div class="name">Porsche 911 Targa</div>
+			  <div class="image" >
+			  	   <img style=" height:80%; width:80%; margin-top:45%;"
+				   src="http://special.porsche.com/microsite/911-targa/assets/images/share/02.jpg"/>
+			  </div>
+  		 </div>
+		 <div class="content">
+		 	  <div class="name">Porsche 911 Carrera</div>
+			  <div class="image" >
+			  	   <img style=" height:80%; width:80%; margin-top:45%;"
+				   src="http://home4cars.com/data_images/models/porsche-911-carrera/porsche-911-carrera-03.jpg"/>
+			  </div>
+		 </div>
+		 <div class="content">
+		 	  <div class="name">Porsche 911 Carrera Cabriolet</div>
+			  <div class="image" >
+			  	   <img style=" height:80%; width:80%; margin-top:45%;"
+				   src="http://s1.cdn.autoevolution.com/images/gallery/PORSCHE911CarreraSCabriolet-991--4478_5.jpeg"/>
+			  </div>
+		 </div>
+		 <div class="content">
+		 	  <div class="name">Porsche 911 GT2 RS</div>
+			  <div class="image" >
+			  	   <img style=" height:80%; width:80%; margin-top:45%;"
+				   src="http://cartype.com/pics/8182/small/porsche_911_997_gt2_rs_11_03.jpg"/>
+			  </div>
+		 </div>
+		 <div class="content">
+		 	  <div class="name">Porsche 911 GT3</div>
+			  <div class="image" >
+			  	   <img style=" height:80%; width:80%; margin-top:45%;"
+				   src="http://www.a777aa77.ru/porsche/2009-porsche-911-gt3-rs.jpg"/>
+			  </div>
+		 </div>
+		 <div class="content">
+		 	  <div class="name">Porsche 911 Targa S</div>
+			  <div class="image" >
+			  	   <img style=" height:80%; width:80%; margin-top:45%;"
+				   src="http://static.robbreport.com/sites/default/files/images/articles/2015Nov/1809936//porsche-targa-03.jpg"/>
+			  </div>
+		 </div>
+		 <div class="content">
+		 	  <div class="name">Porsche 911 Turbo</div>
+			  <div class="image" >
+			  	   <img style=" height:80%; width:80%; margin-top:45%;"
+				   src="http://veddro.com/wp-content/uploads/sites/3/2014/10/Porsche-991-Turbo-S-MM-Performance-5.jpg"/>
+			  </div>
+		 </div>
+		 <div class="content">
+		 	  <div class="name">Porsche 918 Spyder</div>
+			  <div class="image" >
+			  	   <img style=" height:80%; width:80%; margin-top:45%;"
+				   src="http://files3.porsche.com/filestore.aspx/normal.jpg?pool=multimedia&type=image&id=rd-2013-918-spyder-modelsite-microsite&lang=none&filetype=normal&version=7d322ae3-366d-11e3-bd76-001a64c55f5c"/>
+			  </div>
+		 </div>
+		 <div class="content">
+		 	  <div class="name">Porsche Boxster</div>
+			  <div class="image" >
+			  	   <img style=" height:80%; width:80%; margin-top:45%;"
+				   src="http://i4.chroniclelive.co.uk/incoming/article10601226.ece/ALTERNATES/s615/Porsche_boxster_spy_001-L.jpg"/>
+			  </div>
+		 </div>
+		 <div class="content">
+  		 	  <div class="name">Porsche Boxster GTS</div>
+			  <div class="image" >
+			  	   <img style=" height:80%; width:80%; margin-top:45%;"
+				   src="http://media.caranddriver.com/images/14q2/599994/2015-porsche-boxster-gts-photo-600089-s-986x603.jpg"/>
+			  </div>
+		 </div>
+		 <div class="content">
+		 	  <div class="name">Porsche Cayenne</div>
+			  <div class="image" >
+			  	   <img style=" height:80%; width:80%; margin-top:45%;"
+				   src="http://home4cars.com/data_images/models/porsche-cayenne/porsche-cayenne-01.jpg"/>
+			  </div>
+		 </div>
+		 <div class="content">
+		 	  <div class="name">Porsche Cayenne S Hybrid</div>
+			  <div class="image" >
+			  	   <img style=" height:80%; width:80%; margin-top:45%;"
+				   src="http://media.caranddriver.com/images/media/51/2015-porsche-cayenne-s-e-hybrid-inline-2-photo-644837-s-original.jpg"/>
+			  </div>
+		 </div>
+		 <div class="content">
+		 	  <div class="name">Porsche Cayenne Turbo</div>
+			  <div class="image" >
+			  	   <img style=" height:80%; width:80%; margin-top:45%;"
+				   src="http://www.a777aa77.ru/porsche/2008-porsche-cayenne-turbo-s.jpg"/>
+			  </div>
+		 </div>
+		 <div class="content">
+		 	  <div class="name">Porsche Cayman</div>
+			  <div class="image" >
+			  	   <img style=" height:80%; width:80%; margin-top:45%;"
+				   src="http://www.blogcdn.com/slideshows/images/slides/857/727/S857727/slug/l/2014-porsche-cayman-s-review-2-1.jpg"/>
+			  </div>
+		 </div>
+		 <div class="content">
+		 	  <div class="name">Porsche Cayman GTS</div>
+			  <div class="image" >
+			  	   <img style=" height:80%; width:80%; margin-top:45%;"
+				   src="http://blog.caranddriver.com/wp-content/uploads/2015/10/2015-Porsche-Cayman-GTS-101-876x535.jpg"/>
+			  </div>
+		 </div>
+		 <div class="content">
+		 	  <div class="name">Porsche Macan</div>
+			  <div class="image" >
+			  	   <img style=" height:80%; width:80%; margin-top:45%;"
+				   src="http://autoguide.com.vsassets.com/blog/wp-content/uploads/2014/07/2015-Porsche-Macan-Front-3q_rdax_646x396.jpg"/>
+			  </div>
+			  <div class="image" >
+			  	   <img style=" height:80%; width:80%; margin-top:45%;"
+				   src="http://autoguide.com.vsassets.com/blog/wp-content/uploads/2014/07/2015-Porsche-Macan-Front-3q_rdax_646x396.jpg"/>
+			  </div>
+		 </div>
+		 <div class="content">
+		 	  <div class="name">Porsche Panamera</div>
+			  <div class="image" >
+			  	   <img style=" height:80%; width:80%; margin-top:45%;"
+				   src="http://home4cars.com/data_images/models/porsche-panamera/porsche-panamera-02.jpg"/>
+			  </div>
+		 </div>
+		 <div class="content">
+		 	  <div class="name">Porsche Panamera GTS</div>
+			  <div class="image" >
+			  	   <img style=" height:80%; width:80%; margin-top:45%;"
+				   src="http://files3.porsche.com/filestore.aspx/porsche-Panamera-image?pool=multimedia&type=image&id=rd-2013-970-g1-2nd-gts-modelsite-intro&lang=none&filetype=normal&version=0eccf54c-373b-11e3-bd76-001a64c55f5c&s=25"/>
+			  </div>
+		 </div>
+		 <div class="content">
+		 	  <div class="name">Porsche Panamera S E-Hybrid</div>
+			  <div class="image" >
+			  	   <img style=" height:80%; width:80%; margin-top:45%;"
+				   src="http://autobild.by/assets/images/Suchavierch/2013/august/2/2014-Porsche-Panamera-S-E-Hybrid-diagram.jpg"/>
+			  </div>
+		 </div>
+		 <div class="content">
+		 	  <div class="name">Porsche Panamera Turbo</div>
+			  <div class="image" >
+			  	   <img style=" height:80%; width:80%; margin-top:45%;"
+				   src="http://pictures.topspeed.com/IMG/crop/201110/porsche-panamera-tur_600x0w.jpg"/>
+			  </div>
+		 </div>
+	</div>
 	<button id="up_button">^</button>
+	
 	<script>
 		document.getElementById("up_button").addEventListener("click", function(){window.scrollTo(0, 0);});
 	</script>
-	<div id="content">
-		 <div class="content" id="p_911">
-		 	  <div class="name">Porsche 911</div>
-			  <div class="image">
-			  	   <img id="img_911" src="http://www.topgear.com/sites/default/files/styles/fit_1960x1102/public/cars-car/carousel/2015/02/buyers_guide_-_porsche_911_cabrio_2014_-_front_quarter.jpg?itok=ffb_tZHr"/>
-			  </div>
-  		 </div>
-		 <div class="content" id="p_panamera">Porsche Panamera</div>
-		 <div class="content" id="p_cayman">Porsche Cayman</div>
-		 <div class="content" id="p_cayenne">Porsche Cayenne</div>
-		 <div class="content" id="p_macan">Porsche Macan</div>
-		 <div class="content" id="p_boxter">Porsche Boxter</div>
-	</div>
+	
+	<script> 
+    	document.addEventListener("scroll", function () { 
+        	var heightForContentExpansion = document.getElementById("header").offsetHeight + document.getElementById("top").offsetHeight + document.getElementById("right-panel").offsetHeight; 
+        	if (window.pageYOffset > heightForContentExpansion) { 
+        	   document.getElementById("right-panel").style.display="none"; 
+        	   document.getElementById("content").style.width="100%"; 
+        	} else { 
+        	  document.getElementById("right-panel").style.display="block"; 
+        	  document.getElementById("content").style.width="85%"; 
+        	} 
+    	}); 
+    </script>
 </body>
 </html>
