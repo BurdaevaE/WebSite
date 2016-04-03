@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab1</title>
+    <meta charset="utf-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css"
+          rel="stylesheet"
+          type="text/css">
+    <style>
+
+		#header {
+			height:auto;
+			float:center;
+			position:relative;
+			background-color: #171617;
+			text-align:center;
+			color:#fac761;
+			}
+
+		#top {
+			height: 70px;
+			background-color:  #626782;
+			color:#fdcc38;
+			text-align:center;
+			font-size:35px;
+			font-family:sans-serif;
+			position:relative;
+			vertical-align:middle;
+		}
+
+		#content {
+			margin-right:170px;
+		}
+
+		.content {
+		 	position:relative;
+    		width:15%;
+		    background:#c49d4d;
+			height:250px;
+			text-align:center;
+			float:right;
+			margin:10px;
+			box-shadow: 5px 3px 8px -5px #000000;
+		 }
+
+		#right-panel {
+			float: right;
+			width: 150px;
+			height: 250px;
+			background-color: #c9b4ce;
+			margin-top:10px;
+			}
+
+		#up_button {
+		    background-color: transparent;
+    		height: 100%;
+    		left: 0;
+    		position: fixed;
+    		top: 0px;
+    		width: 30px;
+    		text-align: center;
+    		padding-top: 10px;
+			z-index: 99;
+			opacity: 0.5;
+    	}
+		#up_button:hover {
+		    background-color: #F6E1FB;
+   			cursor: pointer;
+    		height: 100%;
+    		left: 0;
+    		position: fixed;
+    		top: 0;
+    		width: 40px;
+    		text-align: center;
+    		padding-top: 10px;
+    		color: #777;
+		 }
+
+		@media(max-width: 768px) {
+			#right-panel
+			{
+			 	display:none;
+			}
+			.content
+			{
+			 	width:30%;
+				margin-left: 0px !important;
+			}
+		 }
+
+		#body
+		 {
+    		 max-width:1600px;
+    		 margin: 0 auto 0 auto;
+			 background:#f8e8fc;
+		 }
+		 #logo_image
+		 {
+		  	 height:40%;
+    		 width:40%;
+		 }
+
+         #add_block
+         {
+             position:fixed;
+          	 bottom:20px;
+			 background-position:bottom, left;
+			 margin-left:50px;
+         }
+		 #rem_button
+		 {
+		  	background-position:bottom, right;
+		 }
+    </style>
+</head>
+
+<body id="body">
+<header id="header">
+    <div class="logo_image">
+        <img id="logo_image" src="https://img3.goodfon.ru/wallpaper/big/5/4d/porshe-porshe-logotip-emblema.jpg"/>
+    </div>
+</header>
+<div id="top">The best cars for you! Rrrum-rum......</div>
+<div id="right-panel">
+    <ul>
+        <li>Models</li>
+        <li>Galery</li>
+        <li><a href="http://www.porsche-nnovgorod.ru">Officcial Site</a></li>
+    </ul>
+</div>
+
+<div id="content">
+    <% data.forEach(function(datum) {%>
+    <div class="content" id=<%= "content"+datum.id %>>
+    <span><%= datum.text %></span>
+    <button id="rem_button" onclick="removeData(<%= datum.id%>)">x</button>
+</div>
+<% }); %>
+</div>
+
+<div id="add_block">
+    <input id="input" type="text"/>
+    <button id="add_button" onclick="create()">Add</button>
+</div>
+
+<button id="up_button">^</button>
+<script>
+        document.getElementById("up_button").addEventListener("click", function(){window.scrollTo(0, 0);});
+        </script>
+
+<script>
+        document.addEventListener("scroll", function () {
+        var heightForContentExpansion = document.getElementById("header").offsetHeight + document.getElementById("top").offsetHeight + document.getElementById("right-panel").offsetHeight;
+        if (window.pageYOffset > heightForContentExpansion) {
+            document.getElementById("right-panel").style.display="none";
+            document.getElementById("content").style.width="100%";
+        } else {
+            document.getElementById("content").style.width="85%";
+            }
+        });
+    </script>
+
+
+<script type="text/javascript">
+		function getLastAddedKey() {
+			return doGetRequest('/getLastAddedKey')};
+
+		function doGetRequest(text) {
+		var request = new XMLHttpRequest();
+		request.open('GET', text,false);
+		request.send();
+		if (request.status != 200) {
+			console.log(request.status + ': ' + request.statusText);
+			return;
+		} else {
+			return JSON.parse(request.response).id;
+		}
+	};
+
+		function create(){
+			var text = document.getElementById('input').value;
+			var request = new XMLHttpRequest();
+			request.open('POST', '/new?text='+text);
+			request.send();
+			var newDiv = document.createElement('div');
+			var id = getLastAddedKey('text='+text);
+			newDiv.setAttribute('class','content');
+			newDiv.setAttribute('id','content'+id);
+			newDiv.innerHTML = '<span>'+text+'</span>'+
+				'<button id="rem_button" onclick="removeData('+id+')">x</button>';
+			document.getElementById('content').appendChild(newDiv);
+			document.getElementById('input').value='';
+		}
+
+		function removeData(id){
+			var request = new XMLHttpRequest();
+			request.open('POST', '/delete?id='+id);
+			request.send();
+			document.getElementById('content'+id).remove();
+		}
+	</script>
+
+</body>
+</html>
