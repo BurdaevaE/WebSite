@@ -13,7 +13,7 @@ app.get('/', function(req, res){
 });
 
 app.post('/add', function(req, res){
-    db.run("INSERT INTO content_data (text) VALUES (?)", req.query.text, function (){
+    db.run("INSERT INTO content_data (text, img_url) VALUES (?,?)", req.query.name, req.query.image_url, function (){
         res.send('ok');
     });
 });
