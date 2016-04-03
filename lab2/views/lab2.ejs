@@ -107,10 +107,6 @@
 			 background-position:bottom, left;
 			 margin-left:50px;
          }
-		 #rem_button
-		 {
-		  	background-position:bottom, right;
-		 }
     </style>
 </head>
 
@@ -129,13 +125,14 @@
     </ul>
 </div>
 
-<div id="content">
+<div class="item_content" id="content">
     <% data.forEach(function(datum) {%>
-    <div class="content" id=<%= "content"+datum.id %>>
-    <span><%= datum.text %></span>
-    <button id="rem_button" onclick="removeData(<%= datum.id%>)">x</button>
-</div>
-<% }); %>
+        <div class="content" id=<%= "content"+datum.id %>
+                <div><%= datum.text %></div>
+                <button id="rem_button" onclick="removeData(<%= datum.id%>)">x</button>
+                <image id="image" style="width:100 px; height: 100px;" src ="<%= datum.img_url %>"/>
+        </div>
+    <% }); %>
 </div>
 
 <div id="add_block">
@@ -148,36 +145,29 @@
         document.getElementById("up_button").addEventListener("click", function(){window.scrollTo(0, 0);});
         </script>
 
-<script>
-        document.addEventListener("scroll", function () {
-        var heightForContentExpansion = document.getElementById("header").offsetHeight + document.getElementById("top").offsetHeight + document.getElementById("right-panel").offsetHeight;
-        if (window.pageYOffset > heightForContentExpansion) {
-            document.getElementById("right-panel").style.display="none";
-            document.getElementById("content").style.width="100%";
-        } else {
-            document.getElementById("content").style.width="85%";
-            }
-        });
-    </script>
-
 
 <script type="text/javascript">
-		function getLastAddedKey() {
-			return doGetRequest('/getLastAddedKey')};
 
-		function doGetRequest(text) {
-		var request = new XMLHttpRequest();
-		request.open('GET', text,false);
-		request.send();
-		if (request.status != 200) {
-			console.log(request.status + ': ' + request.statusText);
-			return;
-		} else {
-			return JSON.parse(request.response).id;
-		}
-	};
+		function getLastAddedKey()
+		{
+			return doGetRequest('/getLastAddedKey')
+		};
 
-		function create(){
+		function doGetRequest(text)
+		{
+            var request = new XMLHttpRequest();
+            request.open('GET', text,false);
+            request.send();
+            if (request.status != 200) {
+                console.log(request.status + ': ' + request.statusText);
+                return;
+            } else {
+                return JSON.parse(request.response).id;
+            }
+	    };
+
+		function create()
+		{
 			var text = document.getElementById('input').value;
 			var request = new XMLHttpRequest();
 			request.open('POST', '/new?text='+text);
@@ -186,13 +176,14 @@
 			var id = getLastAddedKey('text='+text);
 			newDiv.setAttribute('class','content');
 			newDiv.setAttribute('id','content'+id);
-			newDiv.innerHTML = '<span>'+text+'</span>'+
-				'<button id="rem_button" onclick="removeData('+id+')">x</button>';
+			newDiv.innerHTML = '<div>'+text+'</div>'+'<image id="image" src="https://img3.goodfon.ru/wallpaper/big/5/4d/porshe-porshe-logotip-emblema.jpg">'
+			    +'<button id="rem_button" onclick="removeData('+id+')">x</button>';
 			document.getElementById('content').appendChild(newDiv);
 			document.getElementById('input').value='';
 		}
 
-		function removeData(id){
+		function removeData(id)
+		{
 			var request = new XMLHttpRequest();
 			request.open('POST', '/delete?id='+id);
 			request.send();
